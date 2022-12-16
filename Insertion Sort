@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Insertion {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int arr[] = new int[5];
+        System.out.println("Enter the elements of array of size 5. ");
+        for(int i=0;i<5;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int j=0;j<5;j++){
+            System.out.print(arr[j]+ " ");
+        }
+
+
+        System.out.println();
+        System.out.println("Sorted array is : ");
+
+        //  Logic for insertion sort..!!
+        
+        int k,l;
+        for(k=1;k<5;k++){
+            int key = arr[k];
+            l=k-1;
+            while(l>=0 && arr[l]>key){
+                arr[l+1] = arr[l];
+                l=l-1;
+            }
+            arr[l+1] = key;
+        }
+        for(int m=0;m<5;m++){
+            System.out.print(arr[m]+" ");
+        }
+    }
+}
